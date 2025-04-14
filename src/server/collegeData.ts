@@ -225,3 +225,5 @@ export const importSampleData = async () => {
     throw error;
   }
 };
+
+module.exports = { collegeData };

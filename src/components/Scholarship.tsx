@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { motion } from "framer-motion";
-import { FaCloudUploadAlt, FaGraduationCap, FaUserGraduate, FaFileDownload } from "react-icons/fa";
+import { FaGraduationCap, FaUserGraduate, FaFileDownload } from "react-icons/fa";
 import axios from "axios";
 
 interface College {
@@ -21,7 +21,6 @@ interface ScholarshipFormValues {
     annualIncome: string;
     emailId: string;
     mobileNumber: string;
-    incomeCertificate: File | null;
     tenthPercentage: string;
     twelfthPercentage: string;
     graduation: string;
@@ -105,7 +104,6 @@ export default function Scholarship() {
         annualIncome: "",
         emailId: "",
         mobileNumber: "",
-        incomeCertificate: null,
         tenthPercentage: "",
         twelfthPercentage: "",
         graduation: "",
@@ -272,29 +270,6 @@ export default function Scholarship() {
                                                 ))}
                                             </Field>
                                         </div>
-                                    </div>
-                                </div>
-
-                                {/* File Upload Section */}
-                                <div className="col-span-2 mb-8">
-                                    <label htmlFor="incomeCertificate">Income Certificate</label>
-                                    <div className="mt-1 flex flex-col items-center justify-center px-6 pt-5 pb-6 border-2 border-dashed border-orange-300 rounded-xl hover:border-orange-500 transition duration-300">
-                                        <FaCloudUploadAlt className="text-5xl text-orange-400" />
-                                        <label htmlFor="file-upload" className="mt-2 cursor-pointer text-orange-600 hover:underline">
-                                            <span>Upload or drag a file</span>
-                                            <input
-                                                id="file-upload"
-                                                type="file"
-                                                className="sr-only"
-                                                onChange={(event) => {
-                                                    const file = event.currentTarget.files?.[0];
-                                                    setFieldValue("incomeCertificate", file);
-                                                    setSelectedFile(file?.name || null);
-                                                }}
-                                            />
-                                        </label>
-                                        <p className="text-xs text-gray-500">PDF only. Max size 10MB</p>
-                                        {selectedFile && <p className="mt-2 text-sm text-orange-600">{selectedFile}</p>}
                                     </div>
                                 </div>
 

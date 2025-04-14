@@ -1,9 +1,10 @@
 import React from "react";
 import { FaRocket } from "react-icons/fa"; // Optional icon
 
-const NewButton = ({ styles }) => (
+const NewButton = ({ styles, onClick }) => (
   <button
-    type="button"
+     type="button"
+    onClick={onClick}
     className={`
       relative group overflow-hidden
       rounded-tl-full rounded-br-full px-10 py-4

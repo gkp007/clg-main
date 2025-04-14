@@ -17,6 +17,7 @@ import CategorySection from "./CategorySection";
 import StudentPath from "./StudentPath";
 import NewButton1 from "./NewButton1";
 import TopColleges from "./TopColleges";
+import Scholarship from "./Scholarship";
 
 export {
   Navbar,
@@ -38,4 +39,5 @@ export {
   StudentPath,
   NewButton1,
   TopColleges,
+  Scholarship,
 };

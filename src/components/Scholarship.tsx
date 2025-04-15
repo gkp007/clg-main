@@ -111,9 +111,25 @@ export default function Scholarship() {
         interestedStream: "",
     };
 
-    const handleSubmit = (values: ScholarshipFormValues) => {
-        console.log(values);
+    // ... (imports)
+
+    const handleSubmit = async (values: ScholarshipFormValues, { resetForm }: any) => {
+        try {
+            const response = await axios.post("http://localhost:5000/api/submissions", values, {
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            });
+            console.log("Submission successful:", response.data);
+            alert("Form submitted successfully!");
+            resetForm();
+        } catch (error) {
+            console.error("Submission failed:", error);
+            alert("Failed to submit form. Please try again.");
+        }
     };
+
+    // ... (rest of your code)
 
     const inputClass =
         "mt-1 block w-full rounded-xl border border-gray-300 bg-white/60 shadow-md backdrop-blur-sm px-4 py-2 text-gray-800 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-orange-400 transition-all duration-300";

@@ -104,7 +104,7 @@ const Business = () => (
       
       <p className="text-xs py-4 text-red-600 font-medium leading-snug">
         <span className="text-red-500 text-xs mt-1">★</span>
-        Note: This is additional scholarship apart from the state/central scholarships.
+        Note: This is additional scholarship apart from the state/central scholarships
   </p>
       <motion.div
         initial="hidden"

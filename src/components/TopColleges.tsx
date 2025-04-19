@@ -254,7 +254,7 @@ export default function CollegeRankingTable() {
                             </th>
                             <th className="p-4">Courses</th>
                             {/* <th className="p-4">Facilities</th> */}
-                            <th className="p-4">Contact</th>
+                            {/* <th className="p-4">Contact</th> */}
                             {/* <th className="p-4">Established Year</th> */}
                             <th className="p-4 rounded-tr-xl">Website</th>
                         </tr>
@@ -322,10 +322,10 @@ export default function CollegeRankingTable() {
                                         )) || 'N/A'}
                                     </div>
                                 </td> */}
-                                <td className="p-4 group-hover:bg-transparent">
+                                {/* <td className="p-4 group-hover:bg-transparent">
                                     {college.contact ? (
                                         <div className="group-hover:text-blue-600 transition-colors duration-200">
-                                            <div className="flex items-center">
+                                            <div className="flex items-center py-2">
                                                 <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                                 </svg>
@@ -337,18 +337,18 @@ export default function CollegeRankingTable() {
                                                 </svg>
                                                 {college.contact.phone}
                                             </div>
-                                            {/* <div className="text-xs flex items-center">
+                                            <div className="text-xs flex items-center">
                                                 <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                                 </svg>
                                                 {college.contact.address}
-                                            </div> */}
+                                            </div>
                                         </div>
                                     ) : (
                                         'N/A'
                                     )}
-                                </td>
+                                </td> */}
                                 {/* <td className="p-4 group-hover:bg-transparent">
                                     <span className="px-3 py-1 rounded-full bg-gray-100 text-gray-800 group-hover:bg-gray-200 transition-colors duration-200">
                                         {college.establishedYear}

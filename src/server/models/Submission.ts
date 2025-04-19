@@ -1,14 +1,14 @@
 import mongoose from "mongoose";
 
 const submissionSchema = new mongoose.Schema({
-  firstName: String,
-  lastName: String,
-  fatherName: String,
-  motherName: String,
+  fullName: String,
+  mobileNumber: String,
+  emailId: String,
   aadharNo: String,
   annualIncome: String,
-  emailId: String,
-  mobileNumber: String,
+  counsellor_no: String,
+  How_did_you_hear_about_us: String,
+
   tenthPercentage: String,
   twelfthPercentage: String,
   graduation: String,

@@ -49,14 +49,13 @@ export default async function handler(
 
     // Validate required fields
     const requiredFields = [
-      "firstName",
-      "lastName",
-      "fatherName",
-      "motherName",
+      "fullName",
+      "mobileNumber",
+      "emailId",
       "aadharNo",
       "annualIncome",
-      "emailId",
-      "mobileNumber",
+      "counsellor_no",
+      "How_did_you_hear_about_us",
       "tenthPercentage",
       "twelfthPercentage",
       "interestedCollege",
@@ -70,6 +69,27 @@ export default async function handler(
       return res.status(400).json({
         message: "Missing required fields",
         missingFields,
+      });
+    }
+
+    // Validate mobile number format
+    if (!/^\d{10}$/.test(scholarshipData.mobileNumber)) {
+      return res.status(400).json({
+        message: "Invalid mobile number format",
+      });
+    }
+
+    // Validate Aadhar number format
+    if (!/^\d{12}$/.test(scholarshipData.aadharNo)) {
+      return res.status(400).json({
+        message: "Invalid Aadhar number format",
+      });
+    }
+
+    // Validate email format
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(scholarshipData.emailId)) {
+      return res.status(400).json({
+        message: "Invalid email format",
       });
     }
 

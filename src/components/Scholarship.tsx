@@ -5,7 +5,6 @@ import * as Yup from "yup";
 import { motion } from "framer-motion";
 import { FaGraduationCap, FaUserGraduate, FaFileDownload } from "react-icons/fa";
 import axios from "axios";
-import Eligibility from './Journey';
 
 interface College {
     _id: string;
@@ -14,14 +13,13 @@ interface College {
 }
 
 interface ScholarshipFormValues {
-    firstName: string;
-    lastName: string;
-    fatherName: string;
-    motherName: string;
+    fullName: string;
+    mobileNumber: string;
+    emailId: string;
     aadharNo: string;
     annualIncome: string;
-    emailId: string;
-    mobileNumber: string;
+    counsellor_no: string;
+    How_did_you_hear_about_us: string;
     tenthPercentage: string;
     twelfthPercentage: string;
     graduation: string;
@@ -30,17 +28,25 @@ interface ScholarshipFormValues {
 }
 
 const validationSchema = Yup.object({
-    firstName: Yup.string().required("Required"),
-    lastName: Yup.string().required("Required"),
-    fatherName: Yup.string().required("Required"),
-    motherName: Yup.string().required("Required"),
+    fullName: Yup.string().required("Required"),
+    mobileNumber: Yup.string().length(10, "Must be 10 digits").required("Required"),
+    emailId: Yup.string().email("Invalid email format").required("Required"),
     aadharNo: Yup.string().length(12, "Must be 12 digits").required("Required"),
     annualIncome: Yup.string().required("Required"),
-    emailId: Yup.string().email("Invalid email format").required("Required"),
-    mobileNumber: Yup.string().length(10, "Must be 10 digits").required("Required"),
+    counsellor_no: Yup.string(),
+    How_did_you_hear_about_us: Yup.string().required("Required"),
     tenthPercentage: Yup.string().required("Required"),
     twelfthPercentage: Yup.string().required("Required"),
+    graduation: Yup.string(),
+    interestedCollege: Yup.string().required("Required"),
+    interestedStream: Yup.string().required("Required"),
 });
+
+const hearAboutUsOptions = [
+    { value: "from friends", label: "From Friends" },
+    { value: "through ad", label: "Through Ad" },
+    { value: "others", label: "Others" }
+];
 
 export default function Scholarship() {
     const [collegeOptions, setCollegeOptions] = useState<{ value: string; label: string }[]>([]);
@@ -99,14 +105,13 @@ export default function Scholarship() {
     const [selectedFile, setSelectedFile] = useState<string | null>(null);
 
     const initialValues: ScholarshipFormValues = {
-        firstName: "",
-        lastName: "",
-        fatherName: "",
-        motherName: "",
+        fullName: "",
+        mobileNumber: "",
+        emailId: "",
         aadharNo: "",
         annualIncome: "",
-        emailId: "",
-        mobileNumber: "",
+        counsellor_no: "",
+        How_did_you_hear_about_us: "",
         tenthPercentage: "",
         twelfthPercentage: "",
         graduation: "",
@@ -135,9 +140,9 @@ export default function Scholarship() {
     // ... (rest of your code)
 
     const inputClass =
-        "mt-1 block w-full rounded-xl border border-gray-300 bg-white/60 shadow-md backdrop-blur-sm px-4 py-2 text-gray-800 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-orange-400 transition-all duration-300";
+        "mt-1 block w-full rounded-xl border border-gray-300 bg-white/60 shadow-md backdrop-blur-sm px-4 py-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-orange-400 transition-all duration-300 placeholder:text-gray-400 hover:shadow-lg";
 
-    const errorClass = "text-sm text-red-500 mt-1";
+    const errorClass = "text-sm text-red-600 mt-1";
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-orange-50 to-blue-50 py-12 px-4 sm:px-6 lg:px-8">
@@ -148,18 +153,18 @@ export default function Scholarship() {
                     transition={{ duration: 0.5 }}
                     className="text-center mb-12"
                 >
-                    <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-pink-500">
+                    <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange to-pink-600">
                         Scholarship Application
                     </h1>
                     <p className="mt-3 text-lg text-gray-600">Fill out your details to apply</p>
-                    <motion.button
+                    {/* <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="mt-6 px-6 py-3 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-full hover:shadow-xl transition-all duration-300 flex items-center justify-center mx-auto gap-2"
+                        className="mt-6 px-6 py-3 bg-gradient-to-r from-orange-600 to-pink-600 text-gradient rounded-full hover:shadow-xl transition-all duration-300 flex items-center justify-center mx-auto gap-2"
                     >
                         <FaFileDownload className="text-xl" />
                         Download Guidelines
-                    </motion.button>
+                    </motion.button> */}
                 </motion.div>
 
                 {/* Add Eligibility Component */}
@@ -179,36 +184,30 @@ export default function Scholarship() {
                         {({ setFieldValue }) => (
                             <Form>
                                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                                    {/* Student Details Section */}
+                                    {/* Personal Details Section */}
                                     <div className="space-y-6">
                                         <div className="flex items-center gap-3 mb-6">
-                                            <FaUserGraduate className="text-3xl text-orange-500" />
-                                            <h2 className="text-2xl font-bold text-orange-600">Student Details</h2>
+                                            <FaUserGraduate className="text-3xl text-orange" />
+                                            <h2 className="text-2xl font-bold text-orange-600">Personal Details</h2>
                                         </div>
 
                                         <div className="grid grid-cols-1 gap-6">
                                             <div>
-                                                <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">First Name</label>
-                                                <Field name="firstName" className={inputClass} />
-                                                <ErrorMessage name="firstName" component="div" className={errorClass} />
+                                                <label htmlFor="fullName" className="block text-sm font-medium text-gray-700">Full Name</label>
+                                                <Field name="fullName" className={inputClass} />
+                                                <ErrorMessage name="fullName" component="div" className={errorClass} />
                                             </div>
 
                                             <div>
-                                                <label htmlFor="lastName" className="block text-sm font-medium text-gray-700">Last Name</label>
-                                                <Field name="lastName" className={inputClass} />
-                                                <ErrorMessage name="lastName" component="div" className={errorClass} />
+                                                <label htmlFor="mobileNumber" className="block text-sm font-medium text-gray-700">Mobile Number</label>
+                                                <Field name="mobileNumber" className={inputClass} />
+                                                <ErrorMessage name="mobileNumber" component="div" className={errorClass} />
                                             </div>
 
                                             <div>
-                                                <label htmlFor="fatherName" className="block text-sm font-medium text-gray-700">Father's Name</label>
-                                                <Field name="fatherName" className={inputClass} />
-                                                <ErrorMessage name="fatherName" component="div" className={errorClass} />
-                                            </div>
-
-                                            <div>
-                                                <label htmlFor="motherName" className="block text-sm font-medium text-gray-700">Mother's Name</label>
-                                                <Field name="motherName" className={inputClass} />
-                                                <ErrorMessage name="motherName" component="div" className={errorClass} />
+                                                <label htmlFor="emailId" className="block text-sm font-medium text-gray-700">Email ID</label>
+                                                <Field name="emailId" type="email" className={inputClass} />
+                                                <ErrorMessage name="emailId" component="div" className={errorClass} />
                                             </div>
 
                                             <div>
@@ -224,15 +223,26 @@ export default function Scholarship() {
                                             </div>
 
                                             <div>
-                                                <label htmlFor="emailId" className="block text-sm font-medium text-gray-700">Email ID</label>
-                                                <Field name="emailId" type="email" className={inputClass} />
-                                                <ErrorMessage name="emailId" component="div" className={errorClass} />
+                                                <label htmlFor="counsellor_no" className="block text-sm font-medium text-gray-700">Counsellor Mobile No. (Optional)</label>
+                                                <Field name="counsellor_no" className={inputClass} />
+                                                <ErrorMessage name="counsellor_no" component="div" className={errorClass} />
                                             </div>
 
                                             <div>
-                                                <label htmlFor="mobileNumber" className="block text-sm font-medium text-gray-700">Mobile Number</label>
-                                                <Field name="mobileNumber" className={inputClass} />
-                                                <ErrorMessage name="mobileNumber" component="div" className={errorClass} />
+                                                <label htmlFor="How_did_you_hear_about_us" className="block text-sm font-medium text-gray-700">How did you hear about us?</label>
+                                                <Field
+                                                    as="select"
+                                                    name="How_did_you_hear_about_us"
+                                                    className={inputClass}
+                                                >
+                                                    <option value="">Select an option</option>
+                                                    {hearAboutUsOptions.map((option) => (
+                                                        <option key={option.value} value={option.value}>
+                                                            {option.label}
+                                                        </option>
+                                                    ))}
+                                                </Field>
+                                                <ErrorMessage name="How_did_you_hear_about_us" component="div" className={errorClass} />
                                             </div>
                                         </div>
                                     </div>
@@ -240,7 +250,7 @@ export default function Scholarship() {
                                     {/* Educational Details Section */}
                                     <div className="space-y-6">
                                         <div className="flex items-center gap-3 mb-6">
-                                            <FaGraduationCap className="text-3xl text-orange-500" />
+                                            <FaGraduationCap className="text-3xl text-orange" />
                                             <h2 className="text-2xl font-bold text-orange-600">Educational Details</h2>
                                         </div>
 
@@ -283,7 +293,7 @@ export default function Scholarship() {
                                                         ))
                                                     )}
                                                 </Field>
-                                                {loading && <div className="text-sm text-gray-500">Loading colleges...</div>}
+                                                {loading && <div className="text-sm text-gray-600">Loading colleges...</div>}
                                             </div>
 
                                             <div>
@@ -311,7 +321,7 @@ export default function Scholarship() {
                                         type="submit"
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
-                                        className="px-12 py-4 bg-gradient-to-r from-orange-500 to-pink-500 text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                                        className="px-12 py-4 bg-gradient-to-r from-orange-600 to-pink-600 text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
                                     >
                                         Submit Application
                                     </motion.button>

@@ -18,8 +18,9 @@ import StudentPath from "./StudentPath";
 import NewButton1 from "./NewButton1";
 import TopColleges from "./TopColleges";
 import Scholarship from "./Scholarship";
-import Journey from "./Journey";
 
+import Journey from "./Journey";
+import CounselingPage from "./CounselingPage";
 export {
   Navbar,
   Billing,
@@ -42,4 +43,5 @@ export {
   TopColleges,
   Scholarship,
   Journey,
+  CounselingPage,
 };

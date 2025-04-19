@@ -32,6 +32,7 @@ import success from "./success.json";
 import arrow from "./arrow.json";
 import arrow1 from "./arrow1.json";
 import eligibility from "./eligibility.svg";
+import counseling from "./counseling.svg";
 
 export {
   airbnb,
@@ -68,4 +69,5 @@ export {
   arrow,
   arrow1,
   eligibility,
+  counseling,
 };

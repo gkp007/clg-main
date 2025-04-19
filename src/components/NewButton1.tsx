@@ -1,8 +1,9 @@
 import { FaArrowRight } from "react-icons/fa"; // Optional icon
 
-const NewButton1 = ({ styles }) => (
+const NewButton1 = ({ styles, onClick }) => (
     <button
         type="button"
+        onClick={onClick}
         className={`
       relative group overflow-hidden
       border-2 border-orange text-orange

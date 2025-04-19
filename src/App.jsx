@@ -17,6 +17,7 @@ import {
   StudentPath,
   TopColleges,
   Journey,
+  CounselingPage,
 } from "./components";
 import Scholarship from "./components/Scholarship"; // Adjust path if needed
 import Eligibility from "./components/Journey";
@@ -70,6 +71,7 @@ const App = () => {
 
         {/* Scholarship Page */}
         <Route path="/scholarship" element={<Scholarship />} />
+         <Route path="/counseling" element={<CounselingPage />} />
       </Routes>
     </Router>
   );

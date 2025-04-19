@@ -16,9 +16,10 @@ const Navbar = () => {
 
   const navItems = [
     { label: "Home", icon: <FaHome /> },
-    { label: "About", icon: <FaInfoCircle /> },
-    { label: "Register", icon: <FaUserPlus /> },
+    { label: "Counselings", icon: <FaUserPlus /> },
+    
     { label: "Login/Signup", icon: <FaSignInAlt /> },
+    { label: "About", icon: <FaInfoCircle /> },
   ];
 
   return (

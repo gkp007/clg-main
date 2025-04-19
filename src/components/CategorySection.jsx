@@ -57,11 +57,11 @@ const categories = [
 
 const CategorySection = () => {
   return (
-    <section className="bg-gradient-to-tr from-[#fff1ec] to-[#ffe4d4] py-12 px-4 md:px-16 text-center">
-      <div className="inline-block bg-orange-500 text-white text-sm font-semibold px-4 py-1 rounded-full mb-4 animate-bounce">
+    <section className="bg-gradient-to-tr from-[#fff0e6] to-[#ffffff] py-12 px-4 md:px-16 text-center">
+      <div className="inline-block bg-[#009933] text-white text-sm font-semibold px-4 py-1 rounded-full mb-4 animate-bounce">
         Categories
       </div>
-      <h2 className="text-3xl md:text-4xl font-semibold text-black mb-10 leading-tight">
+      <h2 className="text-3xl md:text-4xl font-semibold text-orange mb-10 leading-tight">
         Choice Favourite Course <br />
         <span className="text-orange-500">Admission path</span>
       </h2>
@@ -115,9 +115,9 @@ const CategorySection = () => {
       </div>
 
       {/* CTA */}
-      <button className="mt-10 bg-gradient-to-r from-orange-500 to-red-400 text-white px-6 py-3 rounded-full hover:scale-105 hover:shadow-lg transition-all font-semibold">
+      {/* <button className="mt-10 bg-gradient-to-r from-orange-500 to-red-400 text-white px-6 py-3 rounded-full hover:scale-105 hover:shadow-lg transition-all font-semibold">
         See All Category
-      </button>
+      </button> */}
     </section>
   );
 };

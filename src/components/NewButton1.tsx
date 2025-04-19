@@ -1,4 +1,3 @@
-import React from "react";
 import { FaArrowRight } from "react-icons/fa"; // Optional icon
 
 const NewButton1 = ({ styles }) => (
@@ -17,7 +16,7 @@ const NewButton1 = ({ styles }) => (
     >
         <span className="relative z-10 flex items-center justify-center gap-2">
             <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
-            Learn More
+            Counseling
         </span>
     </button>
 );

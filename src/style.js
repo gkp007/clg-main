@@ -8,7 +8,7 @@ const styles = {
   flexCenter: "flex justify-center items-center",
   flexStart: "flex justify-center items-start",
 
-  paddingX: "sm:px-16 px-6",
+  paddingX: "",
   paddingY: "sm:py-16 py-6",
   padding: "sm:px-16 px-6 sm:py-12 py-4",
 
@@ -17,7 +17,7 @@ const styles = {
 };
 
 export const layout = {
-  section: `flex md:flex-row flex-col ${styles.paddingY}`,
+  section: `flex md:flex-row flex-col sm:px-16 px-6 sm:my-16 my-6 ${styles.paddingY}`,
   sectionReverse: `flex md:flex-row flex-col-reverse ${styles.paddingY}`,
 
   sectionImgReverse: `flex-1 flex ${styles.flexCenter} md:mr-10 mr-0 md:mt-0 mt-10 relative`,

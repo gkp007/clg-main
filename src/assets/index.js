@@ -31,6 +31,7 @@ import scholarship from "./scholarship.png";
 import success from "./success.json";
 import arrow from "./arrow.json";
 import arrow1 from "./arrow1.json";
+import eligibility from "./eligibility.svg";
 
 export {
   airbnb,
@@ -66,4 +67,5 @@ export {
   success,
   arrow,
   arrow1,
+  eligibility,
 };

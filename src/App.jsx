@@ -16,8 +16,10 @@ import {
   CategorySection,
   StudentPath,
   TopColleges,
+  Journey,
 } from "./components";
 import Scholarship from "./components/Scholarship"; // Adjust path if needed
+import Eligibility from "./components/Journey";
 
 const App = () => {
   return (
@@ -47,13 +49,19 @@ const App = () => {
 
               <div className={`bg-white`}>
                 <AboutStats />
-                <ScholarshipSection />
-                <Business />
-                <CategorySection />
                 <StudentPath />
+                {/* <Journey /> */}
+                <Business />
+
                 <TopColleges />
-                <Testimonials />
+                <Scholarship/>
                 <CTA />
+                
+                {/* <ScholarshipSection /> */}
+                {/* <CategorySection /> */}
+                
+                {/* <Testimonials /> */}
+                
                 <Footer />
               </div>
             </div>

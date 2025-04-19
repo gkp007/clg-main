@@ -5,29 +5,36 @@ import { useEffect, useState } from "react";
 
 const steps = [
   {
-    title: "Idea Generation",
-    description: "Conduct market research and gather data",
+    title: "Apply",
+    description: "Apply for the scholarship",
     icon: <FaPuzzlePiece className="text-white text-2xl" />,
     color: "bg-orange-500",
   },
   {
-    title: "Design",
-    description: "Design the product and refine features",
+    title: "Test link",
+    description: "We will send you the test link",
     icon: <FaSearch className="text-white text-2xl" />,
     color: "bg-blue-500",
   },
   {
-    title: "Testing",
-    description: "Conduct rigorous testing",
+    title: "Pass",
+    description: "Get above 60% in the test",
     icon: <FaStopwatch className="text-white text-2xl" />,
     color: "bg-green-500",
   },
   {
-    title: "Launch",
-    description: "Officially launch the product",
+    title: "Admission",
+    description: "Take admission",
     icon: <MdOutlineRocketLaunch className="text-white text-2xl" />,
     color: "bg-yellow-400",
   },
+  {
+    title: "Amount",
+    description: "Get the scholarship amount",
+    icon: <FaStopwatch className="text-white text-2xl" />,
+    color: "bg-green-500",
+  },
+  
 ];
 
 const StudentPath = () => {
@@ -53,11 +60,19 @@ const StudentPath = () => {
       />
 
       {/* Section Heading */}
+
+      
       <div className="text-center mb-16">
-        <h2 className="text-4xl font-extrabold text-gray-800 tracking-tight">
-          🌟 Electronic Product Launch Roadmap
-        </h2>
-        <p className="text-gray-600 mt-2">Your step-by-step innovation journey</p>
+
+        <div className="inline-block bg-[#009933] text-white text-sm font-semibold px-4 py-1 rounded-full mb-4 animate-bounce">
+        Journey
+      </div>
+      
+       <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-4 fade-up opacity-0 translate-y-6 transition-all duration-700">
+        <span className="font-bold text-black text-orange bg-clip-text text-transparent">Roadmap</span> to get the scholarship.
+      </h2>
+     
+        <p className="text-gray-600 py-8">Your step-by-step scholarship journey</p>
       </div>
 
       {/* Timeline */}
@@ -97,7 +112,7 @@ const StudentPath = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 + index * 0.1 }}
-              className="mt-4 font-bold text-xl text-gray-800"
+              className="mt-8 font-bold  text-xl text-gray-800"
             >
               {step.title}
             </motion.h3>

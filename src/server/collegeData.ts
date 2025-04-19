@@ -6,8 +6,7 @@ const collegeData = [
     location: "Pune, Maharashtra",
     courses: ["B.TECH", "MBA", "MCA"],
     rating: 4.8,
-    description:
-      "A premier engineering institution known for its excellence in technical education",
+    description: "A premier engineering institution known for its excellence",
     establishedYear: 1983,
     facilities: [
       "Modern Laboratories",

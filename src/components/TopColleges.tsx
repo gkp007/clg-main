@@ -165,10 +165,14 @@ export default function CollegeRankingTable() {
     }
 
     return (
-        <div className="p-4 max-w-full mx-auto animate-fade-in">
-            <h2 className="text-4xl font-bold mb-6 text-center bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+        <div className="p-4 px-12 max-w-full mx-auto animate-fade-in">
+
+
+
+
+            <h1 className="text-4xl text-center font-extrabold md:text-4xl text-orange mb-10 leading-tight racking-tight">
                 Top Colleges
-            </h2>
+            </h1>
 
             {/* Search Bar */}
             <div className="mb-8 max-w-2xl mx-auto">
@@ -181,7 +185,7 @@ export default function CollegeRankingTable() {
                             setSearchQuery(e.target.value);
                             setCurrentPage(1); // Reset to first page when searching
                         }}
-                        className="w-full px-4 py-3 pl-12 pr-4 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 shadow-sm"
+                        className="w-full px-4 py-3 pl-12 pr-4 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-transparent transition-all duration-200 shadow-sm"
                     />
                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                         <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -213,8 +217,8 @@ export default function CollegeRankingTable() {
                                 setCurrentPage(1);
                             }}
                             className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 ${selectedCourse === course
-                                ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-lg'
-                                : 'bg-white text-gray-700 border-2 border-gray-200 hover:border-blue-400 hover:bg-gray-50'
+                                ? 'bg-orange text-white shadow-lg'
+                                : 'bg-white text-gray-700 border-2 border-gray-200 hover:text-gray-500 hover:border-gray-500 hover:bg-gray-50'
                                 }`}
                         >
                             {course}
@@ -228,22 +232,17 @@ export default function CollegeRankingTable() {
                 </div>
             </div>
 
-            {/* Debug Info - Remove in production */}
-            <div className="mb-4 p-4 bg-gray-100 rounded">
-                <p>Total Colleges: {colleges.length}</p>
-                <p>Selected Course: {selectedCourse}</p>
-                <p>Filtered Colleges: {filteredColleges.length}</p>
-            </div>
+
 
             {/* Table */}
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
-                className="p-4 max-w-full mx-auto overflow-x-auto sm:overflow-x-hidden rounded-xl shadow-lg bg-white"
+                className="p-4 max-w-full mx-auto overflow-x-auto sm:overflow-x-hidden shadow-lg bg-white"
             >
-                <table className="w-full min-w-[700px] text-sm text-left">
-                    <thead className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
+                <table className="w-full min-w-[700px] rounded-lg text-sm text-left">
+                    <thead className="bg-gray-400 border text-white">
                         <tr>
                             <th className="p-4 rounded-tl-xl">College Name</th>
                             <th className="p-4">Location</th>
@@ -254,9 +253,9 @@ export default function CollegeRankingTable() {
                                 Rating {sortConfig.key === 'rating' && (sortConfig.direction === 'asc' ? '⬆️' : '⬇️')}
                             </th>
                             <th className="p-4">Courses</th>
-                            <th className="p-4">Facilities</th>
+                            {/* <th className="p-4">Facilities</th> */}
                             <th className="p-4">Contact</th>
-                            <th className="p-4">Established Year</th>
+                            {/* <th className="p-4">Established Year</th> */}
                             <th className="p-4 rounded-tr-xl">Website</th>
                         </tr>
                     </thead>
@@ -278,9 +277,9 @@ export default function CollegeRankingTable() {
                                     <div className="font-medium text-lg group-hover:text-blue-600 transition-colors duration-200">
                                         {college.name}
                                     </div>
-                                    <div className="text-sm text-gray-500 group-hover:text-gray-700 transition-colors duration-200">
+                                    {/* <div className="text-sm text-gray-500 group-hover:text-gray-700 transition-colors duration-200">
                                         {college.description}
-                                    </div>
+                                    </div> */}
                                 </td>
                                 <td className="p-4 group-hover:bg-transparent">
                                     <span className="flex items-center group-hover:text-blue-600 transition-colors duration-200">
@@ -311,7 +310,7 @@ export default function CollegeRankingTable() {
                                         )) || 'N/A'}
                                     </div>
                                 </td>
-                                <td className="p-4 group-hover:bg-transparent">
+                                {/* <td className="p-4 group-hover:bg-transparent">
                                     <div className="flex flex-wrap gap-1">
                                         {college.facilities?.map((facility, i) => (
                                             <span
@@ -322,7 +321,7 @@ export default function CollegeRankingTable() {
                                             </span>
                                         )) || 'N/A'}
                                     </div>
-                                </td>
+                                </td> */}
                                 <td className="p-4 group-hover:bg-transparent">
                                     {college.contact ? (
                                         <div className="group-hover:text-blue-600 transition-colors duration-200">
@@ -338,23 +337,23 @@ export default function CollegeRankingTable() {
                                                 </svg>
                                                 {college.contact.phone}
                                             </div>
-                                            <div className="text-xs flex items-center">
+                                            {/* <div className="text-xs flex items-center">
                                                 <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                                 </svg>
                                                 {college.contact.address}
-                                            </div>
+                                            </div> */}
                                         </div>
                                     ) : (
                                         'N/A'
                                     )}
                                 </td>
-                                <td className="p-4 group-hover:bg-transparent">
+                                {/* <td className="p-4 group-hover:bg-transparent">
                                     <span className="px-3 py-1 rounded-full bg-gray-100 text-gray-800 group-hover:bg-gray-200 transition-colors duration-200">
                                         {college.establishedYear}
                                     </span>
-                                </td>
+                                </td> */}
                                 <td className="p-4 group-hover:bg-transparent">
                                     {college.website && (
                                         <a

@@ -87,10 +87,8 @@ h1 {
 }
 
 .testimonial-card {
-  background: rgb(255, 249, 245);
   padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 2px 16px rgb(255, 226, 206);
+
   display: flex;
   gap: 15px;
   height: 120px;

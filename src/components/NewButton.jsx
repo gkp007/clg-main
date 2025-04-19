@@ -24,7 +24,7 @@ const NewButton = ({ styles, onClick }) => (
     {/* Button Content */}
     <span className="relative z-10 flex items-center justify-center gap-2">
       <FaRocket className="text-white group-hover:animate-bounce transition-transform duration-300" />
-      Get Started
+      Apply Now
     </span>
   </button>
 );

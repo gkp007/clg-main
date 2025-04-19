@@ -1,4 +1,19 @@
-import { people01, people02, people03, facebook, instagram, linkedin, twitter, airbnb, binance, coinbase, dropbox, send, shield, star  } from "../assets";
+import {
+  people01,
+  people02,
+  people03,
+  facebook,
+  instagram,
+  linkedin,
+  twitter,
+  airbnb,
+  binance,
+  coinbase,
+  dropbox,
+  send,
+  shield,
+  star,
+} from "../assets";
 
 export const navLinks = [
   {
@@ -23,23 +38,23 @@ export const features = [
   {
     id: "feature-1",
     icon: star,
-    title: "Rewards",
+    title: "Courses",
     content:
-      "The best credit cards offer some tantalizing combinations of promotions and prizes",
+      "At present DIPLOMA, MBA, MCA, BTECH, BCA are only eligible for this scholarship.",
   },
   {
     id: "feature-2",
     icon: shield,
-    title: "100% Secured",
+    title: "Batch",
     content:
-      "We take proactive steps make sure your information and transactions are secure.",
+      "Candidate must be enrolled in new academic session only 2025-26 batch.",
   },
   {
     id: "feature-3",
     icon: send,
-    title: "Balance Transfer",
+    title: "Scholarship Test",
     content:
-      "A balance transfer credit card can save you a lot of money in interest charges.",
+      "To get the scholarship candidate need to score at least 60% in the scholarship test.",
   },
 ];
 

@@ -21,6 +21,8 @@ import Scholarship from "./Scholarship";
 
 import Journey from "./Journey";
 import CounselingPage from "./CounselingPage";
+import CTAcounseling from "./CTAcounseling";
+import Counselor from "./Counselor";
 export {
   Navbar,
   Billing,
@@ -44,4 +46,6 @@ export {
   Scholarship,
   Journey,
   CounselingPage,
+  CTAcounseling,
+  Counselor,
 };

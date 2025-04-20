@@ -1,25 +1,25 @@
-import { FaUniversity, FaPlaneDeparture, FaBookOpen } from "react-icons/fa";
+import { FaNetworkWired, FaFilter, FaUserCheck } from "react-icons/fa"; 
 import { motion } from "framer-motion";
 
 const cards = [
   {
-    icon: <FaUniversity />,
-    title: "Full College Cost",
-    desc: "Comprehensive fees for students during the course of study",
+    icon: <FaNetworkWired />, 
+    title: "A Growing Network You Can Trust",
+    desc: "With a large and growing network of students, our insights are up-to-date and student-driven. We don’t push you – you choose what’s right for you.",
     bg: "bg-indigo-100",
     color: "text-indigo-600",
   },
   {
-    icon: <FaPlaneDeparture />,
-    title: "Transportation Costs",
-    desc: "The cost for each student's round trip from home to campus",
+    icon: <FaFilter />, 
+    title: "Choose What Suits You Best",
+    desc: "Why pay extra for things you won’t use? Just tell us your preferences – we’ll filter and suggest the best colleges for you.",
     bg: "bg-purple-100",
     color: "text-purple-600",
   },
   {
-    icon: <FaBookOpen />,
-    title: "Learning Equipment",
-    desc: "All equipment to support learning activities for each student",
+    icon: <FaUserCheck />, 
+    title: "Understand Your Needs",
+    desc: "We listen first. Your goals, interests, and financial comfort are all factored in. We provide unbiased insights into colleges based on real student experiences and data.",
     bg: "bg-blue-100",
     color: "text-blue-600",
   },
@@ -41,7 +41,7 @@ const fadeUp = {
 const ScholarshipSection = () => {
   return (
     <section className="relative bg-gradient-to-br from-white via-slate-50 to-gray-100 py-20 px-6 md:px-16 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-full mx-auto">
         {/* Section Header */}
         <motion.div
           initial="hidden"
@@ -52,15 +52,15 @@ const ScholarshipSection = () => {
         >
           <div>
             <p className="text-sm text-orange-500 font-semibold uppercase tracking-wide">
-              About Us
+              We Provide
             </p>
-            <h2 className="text-4xl font-bold mt-1 text-gray-900 leading-snug">
-              Free <span className="text-orange-400">Scholarship</span> <br />
-              Provided By <span className="text-gray-800">Schdent</span>
+            <h2 className="text-4xl font-bold mt-1 text-gray-600 leading-snug">
+              Free <span className="text-orange font-bold">Scholarship</span> <br />
+               & Career <span className="text-gray-600">Guidance</span>
             </h2>
           </div>
           <p className="text-gray-600 max-w-xl text-base">
-            Have the opportunity to go to school or college without worrying about the cost. Just focus on your studies and assignments—we’ve got the rest covered.
+            At 2nd scholarship, we offer personalized college counseling, free scholarship & also helps students to get other scholarship as well.
           </p>
         </motion.div>
 

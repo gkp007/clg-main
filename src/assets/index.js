@@ -33,6 +33,10 @@ import arrow from "./arrow.json";
 import arrow1 from "./arrow1.json";
 import eligibility from "./eligibility.svg";
 import counseling from "./counseling.svg";
+import user from "./user.png";
+import course from "./course.svg";
+import batch from "./batch.svg";
+import test from "./test.svg";
 
 export {
   airbnb,
@@ -70,4 +74,8 @@ export {
   arrow1,
   eligibility,
   counseling,
+  user,
+  course,
+  batch,
+  test,
 };

@@ -137,16 +137,15 @@ export default function Scholarship() {
         }
     };
 
-    // ... (rest of your code)
 
     const inputClass =
-        "mt-1 block w-full rounded-xl border border-gray-300 bg-white/60 shadow-md backdrop-blur-sm px-4 py-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-orange-400 transition-all duration-300 placeholder:text-gray-400 hover:shadow-lg";
+        "mt-1 block w-full rounded-xl border border-gray-600 bg-white/60 px-4 py-3 text-gray-800 placeholder:text-gray-400";
 
     const errorClass = "text-sm text-red-600 mt-1";
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-orange-50 to-blue-50 py-12 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-7xl mx-auto">
+            <div className=" mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -174,7 +173,7 @@ export default function Scholarship() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
-                    className="bg-white/80 backdrop-blur-lg p-10 rounded-3xl shadow-2xl"
+                    className="bg-white/80 backdrop-blur-lg p-10 rounded-3xl border-2 border-orange shadow-sm"
                 >
                     <Formik
                         initialValues={initialValues}
@@ -321,7 +320,15 @@ export default function Scholarship() {
                                         type="submit"
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
-                                        className="px-12 py-4 bg-gradient-to-r from-orange-600 to-pink-600 text-white font-semibold text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                                        className={`
+      relative group overflow-hidden
+      border-2 border-orange text-orange
+      bg-transparent px-10 py-4 font-poppins font-medium text-[18px]
+      rounded-tl-full rounded-br-full transition-all duration-300 ease-in-out
+      hover:bg-orange-500 hover:text-orange
+      hover:shadow-[0px_10px_28px_rgba(255,165,0,0.4)]
+      active:scale-95 cursor-pointer
+    `}
                                     >
                                         Submit Application
                                     </motion.button>

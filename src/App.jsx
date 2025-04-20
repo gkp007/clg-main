@@ -18,8 +18,9 @@ import {
   TopColleges,
   Journey,
   CounselingPage,
+  Counselor,
 } from "./components";
-import Scholarship from "./components/Scholarship"; // Adjust path if needed
+import Scholarship from "./components/Scholarship"; 
 import Eligibility from "./components/Journey";
 
 const App = () => {
@@ -55,14 +56,12 @@ const App = () => {
                 <Business />
 
                 <TopColleges />
-                <Scholarship/>
+                <Scholarship />
+                
+                  <div className="inline-block bg-[#009933] text-white text-sm font-semibold ml-8 px-4 py-1 rounded-full mb-4 animate-bounce">
+        Student and alumni connect
+                </div>
                 <CTA />
-                
-                {/* <ScholarshipSection /> */}
-                {/* <CategorySection /> */}
-                
-                {/* <Testimonials /> */}
-                
                 <Footer />
               </div>
             </div>
@@ -72,6 +71,7 @@ const App = () => {
         {/* Scholarship Page */}
         <Route path="/scholarship" element={<Scholarship />} />
          <Route path="/counseling" element={<CounselingPage />} />
+         <Route path="/counselor" element={<Counselor />} />
       </Routes>
     </Router>
   );

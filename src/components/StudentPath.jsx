@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaPuzzlePiece, FaSearch, FaStopwatch } from "react-icons/fa";
+import { FaCheckCircle, FaPuzzlePiece, FaRupeeSign, FaSearch, FaStopwatch } from "react-icons/fa";
 import { MdOutlineRocketLaunch } from "react-icons/md";
 import { useEffect, useState } from "react";
 
@@ -8,7 +8,7 @@ const steps = [
     title: "Apply",
     description: "Apply for the scholarship",
     icon: <FaPuzzlePiece className="text-white text-2xl" />,
-    color: "bg-orange-500",
+    color: "bg-orange",
   },
   {
     title: "Test link",
@@ -19,22 +19,21 @@ const steps = [
   {
     title: "Pass",
     description: "Get above 60% in the test",
-    icon: <FaStopwatch className="text-white text-2xl" />,
-    color: "bg-green-500",
+    icon: <FaCheckCircle className="text-white text-2xl" />,
+    color: "bg-purple-500",
   },
   {
     title: "Admission",
     description: "Take admission",
     icon: <MdOutlineRocketLaunch className="text-white text-2xl" />,
-    color: "bg-yellow-400",
+    color: "bg-red-500",
   },
   {
-    title: "Amount",
+    title: "Reward",
     description: "Get the scholarship amount",
-    icon: <FaStopwatch className="text-white text-2xl" />,
+    icon: <FaRupeeSign className="text-white text-2xl" />,
     color: "bg-green-500",
   },
-  
 ];
 
 const StudentPath = () => {

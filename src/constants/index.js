@@ -13,6 +13,9 @@ import {
   send,
   shield,
   star,
+  course,
+  batch,
+  test,
 } from "../assets";
 
 export const navLinks = [
@@ -37,21 +40,21 @@ export const navLinks = [
 export const features = [
   {
     id: "feature-1",
-    icon: star,
+    icon: course,
     title: "Courses",
     content:
       "At present DIPLOMA, MBA, MCA, BTECH, BCA are only eligible for this scholarship.",
   },
   {
     id: "feature-2",
-    icon: shield,
+    icon: batch,
     title: "Batch",
     content:
       "Candidate must be enrolled in new academic session only 2025-26 batch.",
   },
   {
     id: "feature-3",
-    icon: send,
+    icon: test,
     title: "Scholarship Test",
     content:
       "To get the scholarship candidate need to score at least 60% in the scholarship test.",
@@ -108,24 +111,16 @@ export const footerLinks = [
     title: "Useful Links",
     links: [
       {
-        name: "Content",
+        name: "Counseling",
         link: "https://www.hoobank.com/content/",
       },
       {
-        name: "How it Works",
+        name: "Scholarship apply",
         link: "https://www.hoobank.com/how-it-works/",
       },
       {
-        name: "Create",
+        name: "Become a Counselor",
         link: "https://www.hoobank.com/create/",
-      },
-      {
-        name: "Explore",
-        link: "https://www.hoobank.com/explore/",
-      },
-      {
-        name: "Terms & Services",
-        link: "https://www.hoobank.com/terms-and-services/",
       },
     ],
   },
@@ -133,37 +128,29 @@ export const footerLinks = [
     title: "Community",
     links: [
       {
-        name: "Help Center",
+        name: "Contact Us",
         link: "https://www.hoobank.com/help-center/",
       },
       {
-        name: "Partners",
+        name: "Whatsapp community",
         link: "https://www.hoobank.com/partners/",
       },
       {
-        name: "Suggestions",
+        name: "Telegram channel",
         link: "https://www.hoobank.com/suggestions/",
-      },
-      {
-        name: "Blog",
-        link: "https://www.hoobank.com/blog/",
-      },
-      {
-        name: "Newsletters",
-        link: "https://www.hoobank.com/newsletters/",
       },
     ],
   },
   {
-    title: "Partner",
+    title: "Others",
     links: [
-      {
-        name: "Our Partner",
-        link: "https://www.hoobank.com/our-partner/",
-      },
       {
         name: "Become a Partner",
         link: "https://www.hoobank.com/become-a-partner/",
+      },
+      {
+        name: "Terms & Services",
+        link: "https://www.hoobank.com/terms-and-services/",
       },
     ],
   },

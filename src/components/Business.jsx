@@ -33,7 +33,7 @@ const FeatureCard = ({ icon, title, content, index }) => (
     className={`flex flex-row p-6 rounded-[20px] backdrop-blur-md bg-white/80 hover:scale-105 transition-transform duration-300 shadow-sm border border-gray-200 ${index !== features.length - 1 ? "mb-6" : "mb-0"}`}
   >
     <div className={`w-[64px] h-[64px] rounded-full ${styles.flexCenter} bg-gradient-to-br from-green-100 to-green-100`}>
-      <img src={icon} alt="star" className="w-[50%] h-[50%] object-contain" />
+      <img src={icon} alt="star" className="w-[90%] h-[90%] object-contain" />
     </div>
     <div className="flex-1 flex flex-col ml-3">
       <h4 className="font-poppins font-semibold text-black text-[18px] leading-[23.4px] mb-1">

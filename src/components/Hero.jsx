@@ -14,7 +14,7 @@ const Hero = () => {
   };
   
   const handleGetStarted1 = () => {
-    navigate("/scholarship");
+    navigate("/counseling");
   };
   return (
     <section id="home" className={`flex bg-white md:flex-row flex-col`}>

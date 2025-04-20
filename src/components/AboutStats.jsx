@@ -34,7 +34,7 @@ const AboutStats = () => {
      <div className="flex flex-col md:flex-row justify-center items-center gap-10 mt-14 fade-up opacity-0 translate-y-6 transition-all duration-700 delay-300">
   {[
     { value: "MBA", label: "200+ colleges in Odisha" },
-    { value: "MCA+", label: "120+ colleges in Odisha" },
+    { value: "MCA", label: "120+ colleges in Odisha" },
     { value: "B.TECH", label: "170+ colleges in Odisha" },
     { value: "DIPLOMA", label: "270+ colleges in Odisha" },
     { value: "BCA", label: "320+ colleges in Odisha" },

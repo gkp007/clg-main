@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { FaHome, FaInfoCircle, FaUserPlus, FaSignInAlt } from "react-icons/fa"; // import icons
 import { useNavigate } from "react-router-dom";
+import { logo } from "../assets";
 
 const Navbar = () => {
   const [isSticky, setSticky] = useState(false);
@@ -44,8 +45,8 @@ const Navbar = () => {
     >
       <div className="flex items-center justify-between px-6 py-4">
         {/* Logo */}
-       <div className="flex items-center gap-2 cursor-pointer" onClick={() => navigate('/')}> 
-          <img src="/logo.png" alt="logo" className="w-10 h-10" />
+       <div className=" items-center cursor-pointer" onClick={() => navigate('/')}> 
+          <img src={logo} alt="logo" className="w-30 h-14" />
           {/* You can add a brand name here if needed */}
         </div>
 

@@ -4,7 +4,7 @@ import binance from "./binance.png";
 import card from "./card.png";
 import coinbase from "./coinbase.png";
 import dropbox from "./dropbox.png";
-import logo from "./logo.svg";
+import logo from "./logo.png";
 import quotes from "./quotes.svg";
 import robot from "./robot.png";
 import send from "./Send.svg";
@@ -37,6 +37,7 @@ import user from "./user.png";
 import course from "./course.svg";
 import batch from "./batch.svg";
 import test from "./test.svg";
+import refer from "./refer.svg";
 
 export {
   airbnb,
@@ -78,4 +79,5 @@ export {
   course,
   batch,
   test,
+  refer,
 };

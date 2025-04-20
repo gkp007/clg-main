@@ -119,7 +119,8 @@ export default function Scholarship() {
         interestedStream: "",
     };
 
-    // ... (imports)
+    const [success, setSuccess] = useState<string | null>(null);
+    const [error, setError] = useState<string | null>(null);
 
     const handleSubmit = async (values: ScholarshipFormValues, { resetForm }: any) => {
         try {
@@ -128,12 +129,17 @@ export default function Scholarship() {
                     "Content-Type": "application/json",
                 },
             });
-            console.log("Submission successful:", response.data);
-            alert("Form submitted successfully!");
+            setSuccess("🎉 Your scholarship form has been submitted successfully!");
+            setError(null);
             resetForm();
-        } catch (error) {
-            console.error("Submission failed:", error);
-            alert("Failed to submit form. Please try again.");
+
+            setTimeout(() => setSuccess(null), 5000);
+        } catch (err: any) {
+            console.error("Submission failed:", err);
+            setError("🚫 Failed to submit the form. Please try again later.");
+            setSuccess(null);
+
+            setTimeout(() => setError(null), 5000);
         }
     };
 
@@ -167,6 +173,7 @@ export default function Scholarship() {
                 </motion.div>
 
                 {/* Add Eligibility Component */}
+
 
 
                 <motion.div
@@ -222,12 +229,6 @@ export default function Scholarship() {
                                             </div>
 
                                             <div>
-                                                <label htmlFor="counsellor_no" className="block text-sm font-medium text-gray-700">Counsellor Mobile No. (Optional)</label>
-                                                <Field name="counsellor_no" className={inputClass} />
-                                                <ErrorMessage name="counsellor_no" component="div" className={errorClass} />
-                                            </div>
-
-                                            <div>
                                                 <label htmlFor="How_did_you_hear_about_us" className="block text-sm font-medium text-gray-700">How did you hear about us?</label>
                                                 <Field
                                                     as="select"
@@ -243,6 +244,14 @@ export default function Scholarship() {
                                                 </Field>
                                                 <ErrorMessage name="How_did_you_hear_about_us" component="div" className={errorClass} />
                                             </div>
+
+                                            <div>
+                                                <label htmlFor="counsellor_no" className="block text-sm font-medium text-gray-700">Counsellor Mobile No. (Optional)</label>
+                                                <Field name="counsellor_no" className={inputClass} />
+                                                <ErrorMessage name="counsellor_no" component="div" className={errorClass} />
+                                            </div>
+
+
                                         </div>
                                     </div>
 
@@ -313,6 +322,22 @@ export default function Scholarship() {
                                         </div>
                                     </div>
                                 </div>
+                                {success && (
+                                    <motion.div
+                                        initial={{ opacity: 0, y: -10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        className="bg-green-100 border border-green-400 text-green-800 px-4 py-3 rounded mb-6 text-center"
+                                    >
+                                        {success}
+                                    </motion.div>
+                                )}
+
+                                {error && (
+                                    <div className="bg-red-100 border border-red-400 text-red-800 px-4 py-3 rounded mb-6 text-center">
+                                        {error}
+                                    </div>
+                                )}
+
 
                                 {/* Submit Button */}
                                 <div className="mt-12 flex justify-center">
@@ -335,6 +360,8 @@ export default function Scholarship() {
                                 </div>
                             </Form>
                         )}
+
+
                     </Formik>
                 </motion.div>
             </div>

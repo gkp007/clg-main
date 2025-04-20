@@ -112,15 +112,15 @@ export const footerLinks = [
     links: [
       {
         name: "Counseling",
-        link: "https://www.hoobank.com/content/",
+        link: "/counseling",
       },
       {
         name: "Scholarship apply",
-        link: "https://www.hoobank.com/how-it-works/",
+        link: "/scholarship",
       },
       {
         name: "Become a Counselor",
-        link: "https://www.hoobank.com/create/",
+        link: "/counselor",
       },
     ],
   },
@@ -129,15 +129,15 @@ export const footerLinks = [
     links: [
       {
         name: "Contact Us",
-        link: "https://www.hoobank.com/help-center/",
+        link: "http://localhost:5173/contactUs",
       },
       {
         name: "Whatsapp community",
-        link: "https://www.hoobank.com/partners/",
+        link: "https://chat.whatsapp.com/your-community-link",
       },
       {
         name: "Telegram channel",
-        link: "https://www.hoobank.com/suggestions/",
+        link: "https://t.me/your-channel-link",
       },
     ],
   },
@@ -146,11 +146,11 @@ export const footerLinks = [
     links: [
       {
         name: "Become a Partner",
-        link: "https://www.hoobank.com/become-a-partner/",
+        link: "/partner",
       },
       {
         name: "Terms & Services",
-        link: "https://www.hoobank.com/terms-and-services/",
+        link: "/terms",
       },
     ],
   },

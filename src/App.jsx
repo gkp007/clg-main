@@ -19,6 +19,7 @@ import {
   Journey,
   CounselingPage,
   Counselor,
+  ContactUsForm,
 } from "./components";
 import Scholarship from "./components/Scholarship"; 
 import Eligibility from "./components/Journey";
@@ -72,6 +73,7 @@ const App = () => {
         <Route path="/scholarship" element={<Scholarship />} />
          <Route path="/counseling" element={<CounselingPage />} />
          <Route path="/counselor" element={<Counselor />} />
+         <Route path="/contactUs" element={<ContactUsForm />} />
       </Routes>
     </Router>
   );

@@ -23,6 +23,9 @@ import Journey from "./Journey";
 import CounselingPage from "./CounselingPage";
 import CTAcounseling from "./CTAcounseling";
 import Counselor from "./Counselor";
+import InterestForm from "./InterestForm";
+import ContactUsForm from "./ContactUsForm";
+
 export {
   Navbar,
   Billing,
@@ -48,4 +51,6 @@ export {
   CounselingPage,
   CTAcounseling,
   Counselor,
+  InterestForm,
+  ContactUsForm,
 };

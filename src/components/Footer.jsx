@@ -1,6 +1,7 @@
 import styles from "../style";
 import { logo } from "../assets";
 import { footerLinks, socialMedia } from "../constants";
+import { Link } from "react-router-dom";
 
 const Footer = () => (
   <section className={`${styles.flexCenter} ${styles.paddingY} px-12 flex-col bg-gradient-to-tr from-[#fff0e6] to-[#ffffff]`} >
@@ -30,7 +31,19 @@ const Footer = () => (
                     index !== footerlink.links.length - 1 ? "mb-4" : "mb-0"
                   }`}
                 >
-                  {link.name}
+                  {link.name === "Contact Us" ? (
+                    <Link to={link.link} className="hover:text-orange-500 transition-colors duration-300">
+                      {link.name}
+                    </Link>
+                  ) : link.link.startsWith("http") ? (
+                    <a href={link.link} target="_blank" rel="noopener noreferrer" className="hover:text-orange-500 transition-colors duration-300">
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link to={link.link} className="hover:text-orange-500 transition-colors duration-300">
+                      {link.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

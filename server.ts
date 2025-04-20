@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const { College } = require("./src/server/models/College");
 const { Submission } = require("./src/server/models/Submission");
+const { InterestForm } = require("./src/server/models/InterestForm");
+const { ContactUsForm } = require("./src/server/models/ContactUsForm");
 import type { Request, Response, NextFunction } from "express";
 
 const app = express();
@@ -81,6 +83,32 @@ app.post("/api/submissions", async (req: Request, res: Response) => {
     const submission = new Submission(req.body);
     await submission.save();
     res.status(201).json(submission);
+  } catch (error) {
+    console.error("Error while submitting:", error);
+    res.status(400).json({
+      message: "Error while submitting",
+      error: error instanceof Error ? error.message : "Unknown error",
+    });
+  }
+});
+app.post("/api/interestForm", async (req: Request, res: Response) => {
+  try {
+    const interestForm = new InterestForm(req.body);
+    await interestForm.save();
+    res.status(201).json(interestForm);
+  } catch (error) {
+    console.error("Error while submitting:", error);
+    res.status(400).json({
+      message: "Error while submitting",
+      error: error instanceof Error ? error.message : "Unknown error",
+    });
+  }
+});
+app.post("/api/contactUs", async (req: Request, res: Response) => {
+  try {
+    const contactUsForm = new ContactUsForm(req.body);
+    await contactUsForm.save();
+    res.status(201).json(contactUsForm);
   } catch (error) {
     console.error("Error while submitting:", error);
     res.status(400).json({

@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
-import { counseling } from "../assets";
+import { counseling, refer } from "../assets";
 import styles, { layout } from "../style";
 import { FaCheckCircle } from "react-icons/fa";
 import { motion } from "framer-motion";
+import InterestForm from "./InterestForm";
 
 const eligibilityPoints = [
   "Give feedback of your college.",
@@ -104,9 +105,11 @@ const Counselor = () => {
 
       {/* Right: Illustration */}
       <div className="w-full md:w-1/2 mt-10 md:mt-0 z-10 fade-up opacity-0 translate-y-6 transition-all duration-700 delay-300">
-        <img src={counseling} alt="Eligibility illustration" className="w-full max-w-lg mx-auto drop-shadow-lg" />
+        <img src={refer} alt="Eligibility illustration" className="w-full max-w-lg mx-auto drop-shadow-lg" />
       </div>
             </section>
+
+            <InterestForm/>
             </div>
   );
 };

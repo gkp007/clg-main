@@ -30,8 +30,8 @@ const Navbar = () => {
   const navItems = [
     { label: "Home", icon: <FaHome />, path: "/" }, 
     { label: "Counselings", icon: <FaUserPlus />, path: "/counseling" }, 
-    { label: "Login/Signup", icon: <FaSignInAlt />, path: "/login" }, 
-    { label: "About", icon: <FaInfoCircle />, path: "/about" },
+    // { label: "Login/Signup", icon: <FaSignInAlt />, path: "/login" }, 
+    // { label: "About", icon: <FaInfoCircle />, path: "/about" },
   ];
 
 

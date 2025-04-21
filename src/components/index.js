@@ -25,6 +25,8 @@ import CTAcounseling from "./CTAcounseling";
 import Counselor from "./Counselor";
 import InterestForm from "./InterestForm";
 import ContactUsForm from "./ContactUsForm";
+import TermsConditions from "./TermsConditions";
+import PrivacyPolicy from "./PrivacyPolicy";
 
 export {
   Navbar,
@@ -53,4 +55,6 @@ export {
   Counselor,
   InterestForm,
   ContactUsForm,
+  TermsConditions,
+  PrivacyPolicy,
 };

@@ -150,7 +150,11 @@ export const footerLinks = [
       },
       {
         name: "Terms & Services",
-        link: "/terms",
+        link: "/termsConditions",
+      },
+      {
+        name: "Privacy Policy",
+        link: "/privacyPolicy",
       },
     ],
   },

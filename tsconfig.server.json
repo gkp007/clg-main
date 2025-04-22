@@ -11,6 +11,6 @@
     "allowJs": true,
     "resolveJsonModule": true
   },
-  "include": ["server.ts", "src/server/**/*"],
+  "include": ["app.js", "src/server/**/*"],
   "exclude": ["node_modules"]
 } 

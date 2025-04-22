@@ -6,7 +6,6 @@ const { College } = require("./src/server/models/College");
 const { Submission } = require("./src/server/models/Submission");
 const { InterestForm } = require("./src/server/models/InterestForm");
 const { ContactUsForm } = require("./src/server/models/ContactUsForm");
-import type { Request, Response, NextFunction } from "express";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -19,15 +18,15 @@ app.use(
     credentials: false,
   })
 );
-
 app.use(express.json());
 
-// Add error handling middleware
-app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
+// Error handling middleware
+app.use((err, req, res, next) => {
   console.error("Error:", err);
-  res
-    .status(500)
-    .json({ message: "Internal server error", error: err.message });
+  res.status(500).json({
+    message: "Internal server error",
+    error: err.message,
+  });
 });
 
 // MongoDB Connection
@@ -41,7 +40,7 @@ mongoose
   .then(() => {
     console.log("Connected to MongoDB successfully");
   })
-  .catch((err: Error) => {
+  .catch((err) => {
     console.error("MongoDB connection error:", err);
     console.error(
       "Please make sure MongoDB is running and the connection string is correct"
@@ -49,7 +48,8 @@ mongoose
   });
 
 // API Routes
-app.get("/api/colleges", async (_req: Request, res: Response) => {
+
+app.get("/api/colleges", async (req, res) => {
   try {
     console.log("Fetching colleges from database...");
     const colleges = await College.find();
@@ -59,12 +59,12 @@ app.get("/api/colleges", async (_req: Request, res: Response) => {
     console.error("Error fetching colleges:", error);
     res.status(500).json({
       message: "Error fetching colleges",
-      error: error instanceof Error ? error.message : "Unknown error",
+      error: error.message || "Unknown error",
     });
   }
 });
 
-app.post("/api/colleges", async (req: Request, res: Response) => {
+app.post("/api/colleges", async (req, res) => {
   try {
     const college = new College(req.body);
     await college.save();
@@ -73,12 +73,12 @@ app.post("/api/colleges", async (req: Request, res: Response) => {
     console.error("Error creating college:", error);
     res.status(400).json({
       message: "Error creating college",
-      error: error instanceof Error ? error.message : "Unknown error",
+      error: error.message || "Unknown error",
     });
   }
 });
 
-app.post("/api/submissions", async (req: Request, res: Response) => {
+app.post("/api/submissions", async (req, res) => {
   try {
     const submission = new Submission(req.body);
     await submission.save();
@@ -87,11 +87,12 @@ app.post("/api/submissions", async (req: Request, res: Response) => {
     console.error("Error while submitting:", error);
     res.status(400).json({
       message: "Error while submitting",
-      error: error instanceof Error ? error.message : "Unknown error",
+      error: error.message || "Unknown error",
     });
   }
 });
-app.post("/api/interestForm", async (req: Request, res: Response) => {
+
+app.post("/api/interestForm", async (req, res) => {
   try {
     const interestForm = new InterestForm(req.body);
     await interestForm.save();
@@ -100,11 +101,12 @@ app.post("/api/interestForm", async (req: Request, res: Response) => {
     console.error("Error while submitting:", error);
     res.status(400).json({
       message: "Error while submitting",
-      error: error instanceof Error ? error.message : "Unknown error",
+      error: error.message || "Unknown error",
     });
   }
 });
-app.post("/api/contactUs", async (req: Request, res: Response) => {
+
+app.post("/api/contactUs", async (req, res) => {
   try {
     const contactUsForm = new ContactUsForm(req.body);
     await contactUsForm.save();
@@ -113,13 +115,13 @@ app.post("/api/contactUs", async (req: Request, res: Response) => {
     console.error("Error while submitting:", error);
     res.status(400).json({
       message: "Error while submitting",
-      error: error instanceof Error ? error.message : "Unknown error",
+      error: error.message || "Unknown error",
     });
   }
 });
 
 // Health check endpoint
-app.get("/health", (_req: Request, res: Response) => {
+app.get("/health", (req, res) => {
   res.json({
     status: "ok",
     mongodb:

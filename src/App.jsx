@@ -1,22 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import {
-  Billing,
   Business,
-  CardDeal,
-  Clients,
   CTA,
   Footer,
   Navbar,
-  Stats,
-  Testimonials,
   Hero,
-  ScholarshipSection,
   AboutStats,
-  CategorySection,
   StudentPath,
   TopColleges,
-  Journey,
   CounselingPage,
   Counselor,
   ContactUsForm,
@@ -24,7 +16,6 @@ import {
   PrivacyPolicy,
 } from "./components";
 import Scholarship from "./components/Scholarship"; 
-import Eligibility from "./components/Journey";
 
 const App = () => {
   return (

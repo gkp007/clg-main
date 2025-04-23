@@ -37,6 +37,7 @@ const App = () => {
                 </div>
               </div>
 
+
               <Navbar />
 
               <div className={`bg-white`}>
